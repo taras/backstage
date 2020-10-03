@@ -1,5 +1,5 @@
 ---
-'@backstage/create-app': minor
+'@backstage/create-app': patch
 ---
 
 Add the ability to import users from GitHub Organization into the catalog.
