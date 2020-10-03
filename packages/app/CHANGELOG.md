@@ -1,0 +1,56 @@
+# example-app
+
+## 0.1.1
+### Patch Changes
+
+- Updated dependencies [28edd7d29]
+- Updated dependencies [819a70229]
+- Updated dependencies [2846ef95c]
+- Updated dependencies [3a4236570]
+- Updated dependencies [ae5983387]
+- Updated dependencies [0d4459c08]
+- Updated dependencies [d67c529ab]
+- Updated dependencies [482b6313d]
+- Updated dependencies [e0be86b6f]
+- Updated dependencies [f70a52868]
+- Updated dependencies [12b5fe940]
+- Updated dependencies [8351ad79b]
+- Updated dependencies [30dd11122]
+- Updated dependencies [1297dcb3a]
+- Updated dependencies [368fd8243]
+- Updated dependencies [fb74f1db6]
+- Updated dependencies [3472c8be7]
+- Updated dependencies [cab473771]
+- Updated dependencies [1d0aec70f]
+- Updated dependencies [1c60f716e]
+- Updated dependencies [a73979d45]
+- Updated dependencies [144c66d50]
+- Updated dependencies [a768a07fb]
+- Updated dependencies [a3840bed2]
+- Updated dependencies [339668995]
+  - @backstage/cli@0.1.1
+  - @backstage/plugin-api-docs@0.1.1
+  - @backstage/plugin-catalog@0.1.1
+  - @backstage/plugin-circleci@0.1.1
+  - @backstage/plugin-explore@0.1.1
+  - @backstage/plugin-gcp-projects@0.1.1
+  - @backstage/plugin-github-actions@0.1.1
+  - @backstage/plugin-gitops-profiles@0.1.1
+  - @backstage/plugin-graphiql@0.1.1
+  - @backstage/plugin-jenkins@0.1.1
+  - @backstage/plugin-kubernetes@0.1.1
+  - @backstage/plugin-lighthouse@0.1.1
+  - @backstage/plugin-newrelic@0.1.1
+  - @backstage/plugin-register-component@0.1.1
+  - @backstage/plugin-rollbar@0.1.1
+  - @backstage/plugin-scaffolder@0.1.1
+  - @backstage/plugin-sentry@0.1.1
+  - @backstage/plugin-tech-radar@0.1.1
+  - @backstage/plugin-techdocs@0.1.1
+  - @backstage/plugin-welcome@0.1.1
+  - @backstage/core@0.1.1
+  - @backstage/plugin-cloudbuild@0.1.1
+  - @backstage/catalog-model@0.1.1
+  - @backstage/theme@0.1.1
+  - @backstage/plugin-cost-insights@0.1.1
+  - @backstage/test-utils@0.1.1
