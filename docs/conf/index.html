@@ -73,7 +73,8 @@ allowing for customization.</p>
 <p>Configuration is stored in <code>app-config.yaml</code> files, with support for suffixes
 such as <code>app-config.production.yaml</code> to override values for specific
 environments. The configuration files themselves contain plain YAML, but with
-support for loading in secrets from various sources using a <code>$secret</code> key.</p>
+support for loading in secrets from various sources using for example <code>$env</code> and
+<code>$file</code> keys.</p>
 <p>It is also possible to supply configuration through environment variables, for
 example <code>APP_CONFIG_app_baseUrl=https://staging.example.com</code>. However these
 should be used sparingly, usually just for temporary overrides during

@@ -11,32 +11,45 @@
 tasks, such as reading raw entity data from a remote source, parsing it,
 transforming it, and validating it. These processors are configured under the
 <code>catalog.processors</code> key.</p>
-<h3><a class="anchor" aria-hidden="true" id="processor-github"></a><a href="#processor-github" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Processor: github</h3>
-<p>The <code>github</code> processor is responsible for fetching entity data from files on
-GitHub or GitHub Enterprise. The configuration for this processor lives under
-<code>catalog.processors.github</code>. Example:</p>
-<pre><code class="hljs css language-yaml"><span class="hljs-attr">catalog:</span>
-  <span class="hljs-attr">processors:</span>
-    <span class="hljs-attr">github:</span>
-      <span class="hljs-attr">providers:</span>
-        <span class="hljs-bullet">-</span> <span class="hljs-attr">target:</span> <span class="hljs-string">https://github.com</span>
-          <span class="hljs-attr">token:</span>
-            <span class="hljs-string">$secret:</span>
-              <span class="hljs-attr">env:</span> <span class="hljs-string">GITHUB_PRIVATE_TOKEN</span>
-        <span class="hljs-bullet">-</span> <span class="hljs-attr">target:</span> <span class="hljs-string">https://ghe.example.net</span>
-          <span class="hljs-attr">apiBaseUrl:</span> <span class="hljs-string">https://ghe.example.net/api/v3</span>
-          <span class="hljs-attr">rawBaseUrl:</span> <span class="hljs-string">https://ghe.example.net/raw</span>
-          <span class="hljs-attr">token:</span>
-            <span class="hljs-string">$secret:</span>
-              <span class="hljs-attr">env:</span> <span class="hljs-string">GHE_PRIVATE_TOKEN</span>
+<h3><a class="anchor" aria-hidden="true" id="processor-url"></a><a href="#processor-url" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Processor: url</h3>
+<p>The <code>url</code> processor is responsible for fetching entity data from files in any
+external provider like GitHub, GitLab, Bitbucket, etc. The configuration of this
+processor lives under the top-level <code>integrations</code> key, as it is used by other
+parts of Backstage too.</p>
+<pre><code class="hljs css language-yaml"><span class="hljs-attr">integrations:</span>
+  <span class="hljs-attr">github:</span>
+    <span class="hljs-bullet">-</span> <span class="hljs-attr">host:</span> <span class="hljs-string">github.com</span>
+      <span class="hljs-attr">token:</span>
+        <span class="hljs-string">$env:</span> <span class="hljs-string">GITHUB_TOKEN</span>
+    <span class="hljs-bullet">-</span> <span class="hljs-attr">host:</span> <span class="hljs-string">ghe.example.net</span>
+      <span class="hljs-attr">apiBaseUrl:</span> <span class="hljs-string">https://ghe.example.net/api/v3</span>
+      <span class="hljs-attr">rawBaseUrl:</span> <span class="hljs-string">https://ghe.example.net/raw</span>
+      <span class="hljs-attr">token:</span>
+        <span class="hljs-string">$env:</span> <span class="hljs-string">GHE_TOKEN</span>
+  <span class="hljs-attr">gitlab:</span>
+    <span class="hljs-bullet">-</span> <span class="hljs-attr">host:</span> <span class="hljs-string">gitlab.com</span>
+      <span class="hljs-attr">token:</span>
+        <span class="hljs-string">$env:</span> <span class="hljs-string">GITLAB_TOKEN</span>
+  <span class="hljs-attr">bitbucket:</span>
+    <span class="hljs-bullet">-</span> <span class="hljs-attr">host:</span> <span class="hljs-string">bitbucket.org</span>
+      <span class="hljs-attr">username:</span>
+        <span class="hljs-string">$env:</span> <span class="hljs-string">BITBUCKET_USERNAME</span>
+      <span class="hljs-attr">appPassword:</span>
+        <span class="hljs-string">$env:</span> <span class="hljs-string">BITBUCKET_APP_PASSWORD</span>
+  <span class="hljs-attr">azure:</span>
+    <span class="hljs-bullet">-</span> <span class="hljs-attr">host:</span> <span class="hljs-string">dev.azure.com</span>
+      <span class="hljs-attr">token:</span>
+        <span class="hljs-string">$env:</span> <span class="hljs-string">AZURE_TOKEN</span>
 </code></pre>
-<p>The main subkey is <code>providers</code>, where you can list the various GitHub compatible
-providers you want to be able to fetch data from. Each entry is a structure with
-up to four elements:</p>
+<p>Each key under <code>integrations</code> is a separate configuration for each external
+provider. The providers each have their own configuration, so let's look at the
+GitHub section as an example.</p>
+<p>Directly under the <code>github</code> key is a list of provider configurations, where you
+can list the various GitHub compatible providers you want to be able to fetch
+data from. Each entry is a structure with up to four elements:</p>
 <ul>
-<li><code>target</code> (required): The string prefix of the location target that you want to
-match on, with no trailing slash. For GitHub, it should be exactly
-<code>https://github.com</code>.</li>
+<li><code>host</code> (optional): The host of the location target that you want to match on.
+The default host is <code>github.com</code>.</li>
 <li><code>token</code> (optional): An authentication token as expected by GitHub. If
 supplied, it will be passed along with all calls to this provider, both API
 and raw. If it is not supplied, anonymous access will be used.</li>
@@ -65,7 +78,7 @@ catalog via <a href="/docs/conf/">static configuration</a>. Locations are added 
 the catalog under the <code>catalog.locations</code> key, for example:</p>
 <pre><code class="hljs css language-yaml"><span class="hljs-attr">catalog:</span>
   <span class="hljs-attr">locations:</span>
-    <span class="hljs-bullet">-</span> <span class="hljs-attr">type:</span> <span class="hljs-string">github</span>
+    <span class="hljs-bullet">-</span> <span class="hljs-attr">type:</span> <span class="hljs-string">url</span>
       <span class="hljs-attr">target:</span> <span class="hljs-string">https://github.com/spotify/backstage/blob/master/packages/catalog-model/examples/artist-lookup-component.yaml</span>
 </code></pre>
 <p>The locations added through static configuration can not be removed through the
@@ -82,7 +95,7 @@ separate <code>catalog.rules</code> key, or added to statically configured locat
     <span class="hljs-bullet">-</span> <span class="hljs-attr">allow:</span> <span class="hljs-string">[Component,</span> <span class="hljs-string">API,</span> <span class="hljs-string">Location,</span> <span class="hljs-string">Template]</span>
 
   <span class="hljs-attr">locations:</span>
-    <span class="hljs-bullet">-</span> <span class="hljs-attr">type:</span> <span class="hljs-string">github</span>
+    <span class="hljs-bullet">-</span> <span class="hljs-attr">type:</span> <span class="hljs-string">url</span>
       <span class="hljs-attr">target:</span> <span class="hljs-string">https://github.com/org/example/blob/master/org-data.yaml</span>
       <span class="hljs-attr">rules:</span>
         <span class="hljs-bullet">-</span> <span class="hljs-attr">allow:</span> <span class="hljs-string">[Group]</span>
@@ -98,7 +111,7 @@ the catalog:</p>
 <pre><code class="hljs css language-yaml"><span class="hljs-attr">catalog:</span>
   <span class="hljs-attr">rules:</span> <span class="hljs-string">[]</span>
 </code></pre>
-</span></div></article></div><div class="docs-prevnext"></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#processors">Processors</a><ul class="toc-headings"><li><a href="#processor-github">Processor: github</a></li></ul></li><li><a href="#static-location-configuration">Static Location Configuration</a></li><li><a href="#catalog-rules">Catalog Rules</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><div class="footer-title"><a href="/"><h2 class="footerLogo"></h2></a></div><div><h5>Docs</h5><a href="/docs/overview/what-is-backstage">What is Backstage?</a><a href="/docs/getting-started/">Getting started</a><a href="/docs/features/software-catalog/software-catalog-overview">Service Catalog</a><a href="/docs/plugins/create-a-plugin">Create a Plugin</a><a href="/docs/dls/design">Designing for Backstage</a></div><div><h5>Community</h5><a href="https://discord.gg/MUpMjP2">Support chatroom</a><a href="https://github.com/spotify/backstage/blob/master/CONTRIBUTING.md">Contributing</a><a href="https://mailchi.mp/spotify/backstage-community">Subscribe to our newsletter</a><a href="https://www.cncf.io/sandbox-projects/">CNCF Sandbox</a></div><div><h5>More</h5><a href="https://spotify.github.io/">Open Source @ Spotify</a><a href="https://github.com/spotify/backstage">GitHub</a><a class="github-button" href="https://github.com/spotify/backstage" data-icon="octicon-star" data-count-href="/spotify/backstage/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a><div class="social"><a href="https://twitter.com/SpotifyEng" class="twitter-follow-button">Follow @SpotifyEng</a></div></div></section><a href="https://spotify.github.io/" target="_blank" rel="noreferrer noopener" class="spotifyOpenSource">Made with <span>❤</span> at Spotify</a><p class="copyright">Copyright © 2020 Spotify AB</p></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>window.twttr=(function(d,s, id){var js,fjs=d.getElementsByTagName(s)[0],t=window.twttr||{};if(d.getElementById(id))return t;js=d.createElement(s);js.id=id;js.src='https://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js, fjs);t._e = [];t.ready = function(f) {t._e.push(f);};return t;}(document, 'script', 'twitter-wjs'));</script><script>
+</span></div></article></div><div class="docs-prevnext"></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#processors">Processors</a><ul class="toc-headings"><li><a href="#processor-url">Processor: url</a></li></ul></li><li><a href="#static-location-configuration">Static Location Configuration</a></li><li><a href="#catalog-rules">Catalog Rules</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><div class="footer-title"><a href="/"><h2 class="footerLogo"></h2></a></div><div><h5>Docs</h5><a href="/docs/overview/what-is-backstage">What is Backstage?</a><a href="/docs/getting-started/">Getting started</a><a href="/docs/features/software-catalog/software-catalog-overview">Service Catalog</a><a href="/docs/plugins/create-a-plugin">Create a Plugin</a><a href="/docs/dls/design">Designing for Backstage</a></div><div><h5>Community</h5><a href="https://discord.gg/MUpMjP2">Support chatroom</a><a href="https://github.com/spotify/backstage/blob/master/CONTRIBUTING.md">Contributing</a><a href="https://mailchi.mp/spotify/backstage-community">Subscribe to our newsletter</a><a href="https://www.cncf.io/sandbox-projects/">CNCF Sandbox</a></div><div><h5>More</h5><a href="https://spotify.github.io/">Open Source @ Spotify</a><a href="https://github.com/spotify/backstage">GitHub</a><a class="github-button" href="https://github.com/spotify/backstage" data-icon="octicon-star" data-count-href="/spotify/backstage/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a><div class="social"><a href="https://twitter.com/SpotifyEng" class="twitter-follow-button">Follow @SpotifyEng</a></div></div></section><a href="https://spotify.github.io/" target="_blank" rel="noreferrer noopener" class="spotifyOpenSource">Made with <span>❤</span> at Spotify</a><p class="copyright">Copyright © 2020 Spotify AB</p></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>window.twttr=(function(d,s, id){var js,fjs=d.getElementsByTagName(s)[0],t=window.twttr||{};if(d.getElementById(id))return t;js=d.createElement(s);js.id=id;js.src='https://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js, fjs);t._e = [];t.ready = function(f) {t._e.push(f);};return t;}(document, 'script', 'twitter-wjs'));</script><script>
                 document.addEventListener('keyup', function(e) {
                   if (e.target !== document.body) {
                     return;

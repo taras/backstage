@@ -116,15 +116,12 @@ guest. Let's fix that now and add auth.</p>
     <span class="hljs-attr">github:</span>
       <span class="hljs-attr">development:</span>
         <span class="hljs-attr">clientId:</span>
-          <span class="hljs-string">$secret:</span>
-            <span class="hljs-attr">env:</span> <span class="hljs-string">AUTH_GITHUB_CLIENT_ID</span>
+          <span class="hljs-string">$env:</span> <span class="hljs-string">AUTH_GITHUB_CLIENT_ID</span>
         <span class="hljs-attr">clientSecret:</span>
-          <span class="hljs-string">$secret:</span>
-            <span class="hljs-attr">env:</span> <span class="hljs-string">AUTH_GITHUB_CLIENT_SECRET</span>
+          <span class="hljs-string">$env:</span> <span class="hljs-string">AUTH_GITHUB_CLIENT_SECRET</span>
         <span class="hljs-comment">## uncomment the following three lines if using enterprise</span>
         <span class="hljs-comment"># enterpriseInstanceUrl:</span>
-        <span class="hljs-comment">#  $secret:</span>
-        <span class="hljs-comment">#    env: AUTH_GITHUB_ENTERPRISE_INSTANCE_URL</span>
+        <span class="hljs-comment">#  $env: AUTH_GITHUB_ENTERPRISE_INSTANCE_URL</span>
 </code></pre>
 <ol start="2">
 <li>Set environment variables in whatever fashion is easiest for you. I chose to

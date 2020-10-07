@@ -19,7 +19,7 @@
             <guid>https://backstage.io/blog/2020/09/30/plugin-marketplace.html</guid>
             <pubDate>Wed, 30 Sep 2020 06:00:00 GMT</pubDate>
             <description><![CDATA[<p>Backstage has an ambitious goal: to provide engineers with the best possible developer experience.</p>
-<p>A fantastic developer experience leads to happy, creative, and productive engineers. Our belief is that engineers should not have to be experts in various infrastructure tools to be productive. Infrastructure should be abstracted away, so that developers can spend more cycles building and testing, quickly and safely. Backstage unifies all your infrastructure tooling, services, and documentation to create a streamlined development environment from end to end.</p>
+<p>A great developer experience leads to happy, creative, and productive engineers. Our belief is that engineers should not have to be experts in various infrastructure tools or disciplines (e.g., machine learning or backend) to be productive. Infrastructure should be abstracted away, so that developers can spend more cycles building and testing, quickly and safely. Backstage unifies all your infrastructure tooling, services, and documentation to create a streamlined development environment from end to end.</p>
 <p>Now you may be thinking, “Yeah, sure, that sounds nice and all, but how does Backstage actually abstract away infrastructure?” The short answer: <a href="https://backstage.io/plugins">plugins</a>.</p>
 <p><img src="https://backstage.io/img/cards-plugins.png" alt="plugins"></p>
 ]]></description>
