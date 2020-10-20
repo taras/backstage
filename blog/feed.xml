@@ -12,7 +12,7 @@
             <url>https://backstage.io/undefined</url>
             <link>https://backstage.io/blog</link>
         </image>
-        <copyright>Copyright © 2020 Spotify AB</copyright>
+        <copyright>Copyright © 2020 Backstage Project Authors. All rights reserved. The Linux Foundation has registered trademarks and uses trademarks. For a list of trademarks of The Linux Foundation, please see our Trademark Usage page: https://www.linuxfoundation.org/trademark-usage</copyright>
         <item>
             <title><![CDATA[The Plugin Marketplace is open]]></title>
             <link>https://backstage.io/blog/2020/09/30/plugin-marketplace.html</link>

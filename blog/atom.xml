@@ -7,7 +7,7 @@
     <link rel="alternate" href="https://backstage.io/blog"/>
     <subtitle>The best place to stay up-to-date with the latest Backstage news and events.</subtitle>
     <logo>https://backstage.io/undefined</logo>
-    <rights>Copyright © 2020 Spotify AB</rights>
+    <rights>Copyright © 2020 Backstage Project Authors. All rights reserved. The Linux Foundation has registered trademarks and uses trademarks. For a list of trademarks of The Linux Foundation, please see our Trademark Usage page: https://www.linuxfoundation.org/trademark-usage</rights>
     <entry>
         <title type="html"><![CDATA[The Plugin Marketplace is open]]></title>
         <id>https://backstage.io/blog/2020/09/30/plugin-marketplace.html</id>
