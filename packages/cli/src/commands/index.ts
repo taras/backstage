@@ -170,6 +170,14 @@ export function registerCommands(program: CommanderStatic) {
   program
     .command('build-workspace <workspace-dir> ...<packages>')
     .description('Builds a temporary dist workspace from the provided packages')
+    .option<string[]>(
+      '-f, --file [file]>',
+      'File to include in the package',
+      (item, list) => [...list, item],
+      [],
+    )
+    .option('--build', 'Build packages before packing them into the image')
+    .option('--skeleton <skeleton>', 'Create a bundle of all of the packages')
     .action(lazy(() => import('./buildWorkspace').then(m => m.default)));
 }
 

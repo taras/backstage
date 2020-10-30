@@ -25,5 +25,8 @@ export default async (dir: string, _cmd: Command, packages: string[]) => {
 
   await createDistWorkspace(packages, {
     targetDir: dir,
+    skeleton: _cmd.skeleton,
+    buildDependencies: Boolean(_cmd.build),
+    files: _cmd.file,
   });
 };
